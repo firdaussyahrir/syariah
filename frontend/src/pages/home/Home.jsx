@@ -1,43 +1,50 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { welcome } from "../../assets";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center text-center p-8 overflow-x-auto p-4 bg-white min-h-screen">
-      {/* Teks Sambutan dengan Animasi Fade-in */}
-      <h1 className="text-4xl font-semibold text-blue-600 mb-4 animate-fadeIn">
-        Selamat Datang di Syariah Portal CIMB Niaga
-      </h1>
-      <p className="text-gray-600 mb-8 max-w-xl animate-fadeIn delay-500">
-        Kami hadir untuk memudahkan akses informasi syariah yang terpercaya dan
-        membantu memenuhi kebutuhan Anda akan regulasi berbasis syariah.
-      </p>
-
+    <div className="flex flex-col items-center text-center p-8 bg-[#F6F4EB] min-h-screen">
       {/* Informasi Fitur */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        <div className="p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h3 className="text-xl font-medium text-blue-600 mb-2">
-            Keamanan Data
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 w-full px-4 md:px-0">
+        {/* Card DPS */}
+        <Link
+          to="/dps" // Link ke halaman DPS
+          className="p-6 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+          <h3 className="text-2xl font-semibold text-[#FFC70B] mb-2">
+            Dewan Pengawas Syariah (DPS)
           </h3>
-          <p className="text-gray-500">
-            Data Anda dijaga dengan standar keamanan tertinggi.
+          <p className="text-gray-600">
+            Lembaga yang memiliki peran strategis dalam mengawasi dan menjamin
+            kepatuhan suatu lembaga keuangan terhadap prinsip-prinsip Syariah.
           </p>
-        </div>
-        <div className="p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h3 className="text-xl font-medium text-blue-600 mb-2">
-            Regulasi Terpercaya
+        </Link>
+
+        {/* Card LRSA */}
+        <Link
+          to="/lrsa" // Link ke halaman LRSA
+          className="p-6 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+          <h3 className="text-2xl font-semibold text-[#FFC70B] mb-2">
+            Lembar Review Syariah Advisory (LRSA)
           </h3>
-          <p className="text-gray-500">
-            Mematuhi regulasi syariah yang transparan dan terpercaya.
+          <p className="text-gray-600">
+            Lembaga yang berperan sebagai pusat pengambilan keputusan dan
+            penilaian terhadap regulasi berbasis syariah.
           </p>
-        </div>
-        <div className="p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h3 className="text-xl font-medium text-blue-600 mb-2">
-            Dukungan Penuh
+        </Link>
+
+        {/* Card Regulasi Syariah */}
+        <Link
+          to="/regulasi" // Link ke halaman Regulasi Syariah
+          className="p-6 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+          <h3 className="text-2xl font-semibold text-[#FFC70B] mb-2">
+            Regulasi Syariah
           </h3>
-          <p className="text-gray-500">
-            Tim kami siap mendukung segala kebutuhan informasi syariah Anda.
+          <p className="text-gray-600">
+            Peraturan hukum dan perundang-undangan yang mengatur kegiatan
+            ekonomi dan keuangan berdasarkan prinsip-prinsip syariah.
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );

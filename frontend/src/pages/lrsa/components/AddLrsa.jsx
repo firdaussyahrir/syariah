@@ -1,20 +1,20 @@
-// src/components/AddDps.jsx
+// src/components/AddLrsa.jsx
 import React from "react";
 
-const AddDps = ({ isModalOpen, closeModal }) => {
+const AddLrsa = ({ isModalOpen, closeModal }) => {
   return (
     isModalOpen && (
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
         <div className="bg-white w-full max-w-4xl p-6 rounded-lg shadow-lg relative">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
-            Upload File DPS
+            Upload File LRSA
           </h2>
           <form>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* No */}
+              {/* Unit */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  No
+                  Unit
                 </label>
                 <input
                   type="text"
@@ -22,21 +22,54 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Opini/Risalah Rapat */}
+              {/* ID */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Opini/Risalah Rapat
+                  ID
                 </label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent">
-                  <option value="">Opini</option>
-                  <option value="1">Risalah</option>
-                </select>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
               </div>
 
-              {/* Date (Tahun) */}
+              {/* Jenis */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Date (Tahun)
+                  Jenis
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* No LRSA/E-LRSA */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  No LRSA/E-LRSA
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Perihal */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Perihal
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Date */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Date
                 </label>
                 <input
                   type="date"
@@ -44,10 +77,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* No Opini/Risalah Rapat */}
+              {/* Proposed Sub-Directorate */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  No Opini/Risalah Rapat
+                  Proposed Sub-Directorate
                 </label>
                 <input
                   type="text"
@@ -55,10 +88,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Tanggal Masehi */}
+              {/* Directorate */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Tanggal Masehi
+                  Directorate
                 </label>
                 <input
                   type="text"
@@ -66,10 +99,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Agenda/Perihal */}
+              {/* Business/Support */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Agenda/Perihal
+                  Business/Support
                 </label>
                 <input
                   type="text"
@@ -77,10 +110,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Judul Opini */}
+              {/* Project/Non Project */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Judul Opini
+                  Project/Non Project
                 </label>
                 <input
                   type="text"
@@ -88,38 +121,7 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Kelompok */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Kelompok
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Kategori */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Kategori
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Sub Kategori */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Sub Kategori
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
+              {/* Add more fields as needed */}
 
               {/* Upload File */}
               <div className="col-span-2">
@@ -154,4 +156,4 @@ const AddDps = ({ isModalOpen, closeModal }) => {
   );
 };
 
-export default AddDps;
+export default AddLrsa;

@@ -1,86 +1,20 @@
-// src/components/AddDps.jsx
+// src/components/AddRegulasi.jsx
 import React from "react";
 
-const AddDps = ({ isModalOpen, closeModal }) => {
+const AddRegulasi = ({ isModalOpen, closeModal }) => {
   return (
     isModalOpen && (
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
         <div className="bg-white w-full max-w-4xl p-6 rounded-lg shadow-lg relative">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
-            Upload File DPS
+            Upload Regulasi
           </h2>
           <form>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* No */}
+              {/* Sektor */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  No
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Opini/Risalah Rapat */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Opini/Risalah Rapat
-                </label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent">
-                  <option value="">Opini</option>
-                  <option value="1">Risalah</option>
-                </select>
-              </div>
-
-              {/* Date (Tahun) */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Date (Tahun)
-                </label>
-                <input
-                  type="date"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* No Opini/Risalah Rapat */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  No Opini/Risalah Rapat
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Tanggal Masehi */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Tanggal Masehi
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Agenda/Perihal */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Agenda/Perihal
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
-                />
-              </div>
-
-              {/* Judul Opini */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Judul Opini
+                  Sektor
                 </label>
                 <input
                   type="text"
@@ -99,10 +33,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Kategori */}
+              {/* Klasifikasi */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Kategori
+                  Klasifikasi
                 </label>
                 <input
                   type="text"
@@ -110,10 +44,10 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Sub Kategori */}
+              {/* Sub-Klasifikasi */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Sub Kategori
+                  Sub-Klasifikasi
                 </label>
                 <input
                   type="text"
@@ -121,13 +55,79 @@ const AddDps = ({ isModalOpen, closeModal }) => {
                 />
               </div>
 
-              {/* Upload File */}
-              <div className="col-span-2">
+              {/* OJK & SEOJK */}
+              <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Upload File
+                  OJK & SEOJK
                 </label>
                 <input
-                  type="file"
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Berlaku untuk */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Berlaku untuk
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* No Peraturan */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  No Peraturan
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Tanggal */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Tanggal
+                </label>
+                <input
+                  type="date"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Judul */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Judul
+                </label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* No Peraturan (Link to BI) */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  No Peraturan (Link to BI)
+                </label>
+                <input
+                  type="url"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                />
+              </div>
+
+              {/* Judul (Link to Regulation) */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Judul (Link to Regulation)
+                </label>
+                <input
+                  type="url"
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
                 />
               </div>
@@ -154,4 +154,4 @@ const AddDps = ({ isModalOpen, closeModal }) => {
   );
 };
 
-export default AddDps;
+export default AddRegulasi;

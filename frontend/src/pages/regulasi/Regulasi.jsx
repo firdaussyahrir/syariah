@@ -1,32 +1,45 @@
-import React from "react";
-import Filter from "./components/Filter";
+// Regulasi.jsx
+import React, { useState } from "react";
+import FilterRegulasi from "./components/FilterRegulasi";
+import AddRegulasi from "./components/AddRegulasi";
+import ListRegulasi from "./components/ListRegulasi";
 
 const Regulasi = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <h1 className="text-2xl font-semibold text-gray-800">Page Regulasi</h1>
+    <div className="overflow-x-auto p-6 bg-[#F6F4EB] min-h-screen">
+      {/* Judul Halaman */}
+      <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
+        <h1 className="text-3xl font-semibold">Regulasi Syariah</h1>
+      </div>
 
-      <button
-        className="btn btn-primary bg-blue-500"
-        onClick={() => document.getElementById("my_modal_1").showModal()}>
-        open modal
-      </button>
-      <dialog id="my_modal_1" className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      {/* Tombol Upload File */}
+      <div className="flex justify-start mb-6">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
+          onClick={openModal}>
+          Upload File
+        </button>
+      </div>
 
-      <Filter />
+      {/* Modal pop-up */}
+      <AddRegulasi
+        openModal={openModal}
+        closeModal={closeModal}
+        isModalOpen={isModalOpen}
+      />
+
+      {/* Area Filter */}
+      <FilterRegulasi />
+
+      {/* Tabel untuk menampilkan file yang berhasil diupload */}
+      <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+        <ListRegulasi />
+      </div>
     </div>
   );
 };
