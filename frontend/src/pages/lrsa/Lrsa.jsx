@@ -9,13 +9,13 @@ const Lrsa = () => {
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
-
+  // bg-[#F6F4EB]
   return (
-    <div className="overflow-x-auto p-6 bg-[#F6F4EB] min-h-screen">
+    <div className="">
       {/* Judul Halaman */}
       <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
         <h1 className="text-3xl font-semibold">
-          Lembar Review Syariah Advisory(LRSA)
+          Lembar Review Syariah Advisory (LRSA)
         </h1>
       </div>
 

@@ -1,4 +1,3 @@
-// Nav.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,30 +9,30 @@ const Nav = () => {
         <div className="flex space-x-6 ml-auto">
           <Link
             to="/"
-            className="text-white hover:text-blue-600 transition duration-300">
+            className="text-white hover:text-[#FFC70B] transition duration-300">
             Home
           </Link>
           <Link
             to="/about"
-            className="text-white hover:text-blue-600 transition duration-300">
+            className="text-white hover:text-[#FFC70B] transition duration-300">
             About
           </Link>
           <Link
             to="/contact"
-            className="text-white hover:text-blue-600 transition duration-300">
+            className="text-white hover:text-[#FFC70B] transition duration-300">
             Contact
           </Link>
           <Link
-            to="Profile"
-            className="text-white hover:text-blue-600 transition duration-300">
+            to="/profile"
+            className="text-white hover:text-[#FFC70B] transition duration-300">
             Profile
           </Link>
           <Link
-            to="Login"
-            className="text-white hover:text-blue-600 transition duration-300">
+            to="/login"
+            className="text-white hover:text-[#FFC70B] transition duration-300">
             Login
           </Link>
-          <button className="text-white hover:text-blue-600 transition duration-300">
+          <button className="text-white hover:text-[#FFC70B] transition duration-300">
             Logout
           </button>
         </div>

@@ -1,13 +1,19 @@
 import React from "react";
-import { imgLogin, logo } from "../assets";
+import { imgLogin, loginLogo } from "../assets";
 
 const Login = () => {
   return (
-    <div className="flex h-screen bg-gradient-to-r from-[#1736F5] to-[#FFC70B]">
-      {/* Bagian Kiri */}
-      <div className="flex flex-col justify-center items-center w-full md:w-1/2 bg-white p-12 rounded-r-xl shadow-lg">
+    <div
+      className="flex min-h-screen items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${imgLogin})` }}>
+      {/* Overlay jika ingin menambah efek gelap di gambar */}
+
+      {/* Bagian Kiri - Form Login */}
+      <div className="relative w-full max-w-sm bg-white p-8 rounded-xl shadow-lg z-20">
         {/* Logo */}
-        <img src={logo} alt="CIMB Niaga Syariah" className="w-40 mb-8" />
+        <div className="flex justify-center mb-6">
+          <img src={loginLogo} alt="CIMB Niaga Syariah" className="w-32" />
+        </div>
 
         {/* Instruksi */}
         <h2 className="text-gray-800 mb-6 text-center text-xl font-semibold">
@@ -15,10 +21,9 @@ const Login = () => {
         </h2>
 
         {/* Form Login */}
-        <form className="space-y-5 w-full max-w-md">
+        <form className="space-y-5">
           {/* Input Email */}
           <div className="flex items-center border border-gray-300 rounded-md p-3">
-            <span className="material-icons text-gray-400 mr-3"></span>
             <input
               type="email"
               placeholder="Masukkan alamat email"
@@ -28,7 +33,6 @@ const Login = () => {
 
           {/* Input Password */}
           <div className="flex items-center border border-gray-300 rounded-md p-3">
-            <span className="material-icons text-gray-400 mr-3"></span>
             <input
               type="password"
               placeholder="Masukkan password"
@@ -52,19 +56,6 @@ const Login = () => {
             Bantuan
           </a>
         </p>
-      </div>
-
-      {/* Bagian Kanan */}
-      <div
-        className="w-1/2 relative flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${imgLogin})` }}>
-        {/* Overlay Gradasi */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-        {/* Konten Tambahan */}
-        <div className="absolute bottom-10 left-10 z-20 text-white">
-          <h3 className="text-2xl font-semibold">CIMB Niaga</h3>
-          <p className="text-sm">Anda yang Utama</p>
-        </div>
       </div>
     </div>
   );

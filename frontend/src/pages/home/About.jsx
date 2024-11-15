@@ -4,7 +4,7 @@ import { FaBullseye, FaUsers, FaChartLine } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10 px-6">
+    <div className="flex flex-col items-center  ">
       <div className="bg-white max-w-3xl w-full rounded-xl shadow-xl p-8">
         {/* Judul Halaman */}
         <div className="text-center mb-8">

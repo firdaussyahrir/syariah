@@ -13,14 +13,15 @@ import About from "./pages/home/About";
 import Contact from "./pages/home/Contact";
 import Login from "./user/Login";
 import Riset from "./riset/Riset";
+import useScrollTop from "./hooks/useScrollTop";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div id="app" className="flex flex-col min-h-screen bg-white">
       <Nav />
       <div className="flex flex-1 flex-col">
         <Sidebar />
-        <div className="flex-1 mt-4">
+        <div className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
@@ -35,6 +36,7 @@ function App() {
         </div>
       </div>
       <Footer />
+      <useScrollTop />
     </div>
   );
 }

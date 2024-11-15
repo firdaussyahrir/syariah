@@ -3,65 +3,50 @@ import { FaUserAlt, FaEnvelope, FaBriefcase, FaIdBadge } from "react-icons/fa";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen bg-red-50 flex items-center justify-center py-10 px-4">
-      <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl p-8">
+    <div className="flex items-center justify-center">
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8 m-32">
         {/* Foto Profil */}
         <div className="flex justify-center -mt-20">
           <img
-            src="https://via.placeholder.com/120" // Ganti dengan URL foto profil
+            src="https://via.placeholder.com/120" // Ganti dengan URL foto profil yang valid
             alt="Profile"
-            className="rounded-full border-4 border-[#de1519] w-32 h-32 object-cover shadow-lg"
+            className="rounded-full border-4 border-[#1736F5] w-32 h-32 object-cover shadow-md"
           />
         </div>
 
         {/* Judul Profil */}
         <div className="text-center mt-4">
-          <h1 className="text-2xl font-semibold text-gray-800">John Doe</h1>
+          <h1 className="text-2xl font-semibold text-[#1736F5]">John Doe</h1>
           <p className="text-gray-500 text-sm mt-1">Admin - Legal Advisory</p>
         </div>
 
         {/* Detail Profil */}
         <div className="mt-8 space-y-4">
-          <div className="flex items-center justify-between border-b py-3">
-            <div className="flex items-center space-x-2 text-gray-700">
-              <FaUserAlt className="text-[#de1519]" />
-              <span className="font-medium">Nama Lengkap</span>
-            </div>
-            <span className="text-gray-600 font-light">John Doe</span>
-          </div>
-
-          <div className="flex items-center justify-between border-b py-3">
-            <div className="flex items-center space-x-2 text-gray-700">
-              <FaBriefcase className="text-[#de1519]" />
-              <span className="font-medium">Jabatan</span>
-            </div>
-            <span className="text-gray-600 font-light">
-              Intern Legal Advisory
-            </span>
-          </div>
-
-          <div className="flex items-center justify-between border-b py-3">
-            <div className="flex items-center space-x-2 text-gray-700">
-              <FaIdBadge className="text-[#de1519]" />
-              <span className="font-medium">Role</span>
-            </div>
-            <span className="text-gray-600 font-light">Admin</span>
-          </div>
-
-          <div className="flex items-center justify-between border-b py-3">
-            <div className="flex items-center space-x-2 text-gray-700">
-              <FaEnvelope className="text-[#de1519]" />
-              <span className="font-medium">Email</span>
-            </div>
-            <span className="text-gray-600 font-light">
-              john.doe@example.com
-            </span>
-          </div>
+          <ProfileDetail
+            icon={<FaUserAlt className="text-[#1736F5]" />}
+            label="Nama Lengkap"
+            value="John Doe"
+          />
+          <ProfileDetail
+            icon={<FaBriefcase className="text-[#1736F5]" />}
+            label="Jabatan"
+            value="Intern Legal Advisory"
+          />
+          <ProfileDetail
+            icon={<FaIdBadge className="text-[#1736F5]" />}
+            label="Role"
+            value="Admin"
+          />
+          <ProfileDetail
+            icon={<FaEnvelope className="text-[#1736F5]" />}
+            label="Email"
+            value="john.doe@example.com"
+          />
         </div>
 
         {/* Tombol Edit Profil */}
         <div className="mt-8 flex justify-center">
-          <button className="px-6 py-2 bg-[#de1519] text-white font-medium rounded-full shadow-lg hover:bg-red-600 transition duration-300 ease-in-out">
+          <button className="px-6 py-2 text-white bg-[#1736F5] font-medium rounded-full shadow-md hover:bg-[#0f2b9e] transition duration-300 ease-in-out">
             Edit Profile
           </button>
         </div>
@@ -69,5 +54,16 @@ const Profile = () => {
     </div>
   );
 };
+
+// Komponen Detail Profil Terpisah untuk Menjaga Kode Tetap Bersih
+const ProfileDetail = ({ icon, label, value }) => (
+  <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+    <div className="flex items-center space-x-2 text-gray-700">
+      {icon}
+      <span className="font-medium">{label}</span>
+    </div>
+    <span className="text-gray-600 font-light">{value}</span>
+  </div>
+);
 
 export default Profile;

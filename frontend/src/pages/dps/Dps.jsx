@@ -12,15 +12,15 @@ const Dps = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className="overflow-x-auto p-6 bg-[#F6F4EB] min-h-screen">
-      <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
+    <div className=" ">
+      <div className="w-full bg-[#FFC70B] text-[#1736F5] py-8 mb-8 flex justify-center items-center shadow-md">
         <h1 className="text-3xl font-semibold">Dewan Pengawas Syariah (DPS)</h1>
       </div>
 
       {/* Card untuk Gambar dan Penjelasan */}
-      <div className="flex bg-white shadow-lg rounded-lg overflow-hidden mb-6">
+      <div className="flex bg-white shadow-lg rounded-lg overflow-hidden mb-6 m-4">
         {/* Bagian Gambar */}
-        <div className="w-1/4">
+        <div className="w-1/4 ">
           {" "}
           {/* Mengurangi lebar gambar */}
           <img
@@ -49,7 +49,7 @@ const Dps = () => {
       </div>
 
       {/* Tombol Upload File */}
-      <div className="flex justify-start mb-6">
+      <div className="flex justify-start mb-6 p-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
           onClick={openModal}>
@@ -65,10 +65,12 @@ const Dps = () => {
       />
 
       {/* Area Filter */}
-      <FilterDps />
+      <div className="p-4">
+        <FilterDps />
+      </div>
 
       {/* Tabel untuk menampilkan file yang berhasil diupload */}
-      <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+      <div className="bg-gray-50 p-4 rounded-lg shadow-md m-4">
         <ListDps />
       </div>
     </div>

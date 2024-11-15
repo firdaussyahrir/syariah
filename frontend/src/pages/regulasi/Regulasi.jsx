@@ -11,7 +11,7 @@ const Regulasi = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className="overflow-x-auto p-6 bg-[#F6F4EB] min-h-screen">
+    <div className="">
       {/* Judul Halaman */}
       <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
         <h1 className="text-3xl font-semibold">Regulasi Syariah</h1>
