@@ -1,9 +1,7 @@
-// Dps.jsx
 import React, { useState } from "react";
-import FilterDps from "./components/FIlterDps";
+import FilterDps from "./components/FilterDps";
 import AddDps from "./components/AddDps";
 import ListDps from "./components/ListDps";
-import { descdps } from "../../assets";
 
 const Dps = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -12,66 +10,44 @@ const Dps = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className=" ">
-      <div className="w-full bg-[#FFC70B] text-[#1736F5] py-8 mb-8 flex justify-center items-center shadow-md">
-        <h1 className="text-3xl font-semibold">Dewan Pengawas Syariah (DPS)</h1>
+    <div className="">
+      {/* Header */}
+      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
+        <h1 className="text-4xl font-semibold text-center">
+          Dewan Pengawas Syariah (DPS)
+        </h1>
+        <p className="text-center mt-2 text-lg opacity-80">
+          Manajemen Data Opini dan Risalah Rapat
+        </p>
       </div>
 
-      {/* Card untuk Gambar dan Penjelasan */}
-      <div className="flex bg-white shadow-lg rounded-lg overflow-hidden mb-6 m-4">
-        {/* Bagian Gambar */}
-        <div className="w-1/4 ">
-          {" "}
-          {/* Mengurangi lebar gambar */}
-          <img
-            src={descdps}
-            alt="Banner DPS"
-            className="w-full h-auto object-cover" // Menggunakan h-auto agar tinggi gambar proporsional
-          />
+      <div className="container mx-auto px-4">
+        {/* Tombol Upload File */}
+        <div className="flex justify-start mb-8">
+          <button
+            className="fflex items-center bg-[#1cd05d] text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#4682a8] hover:shadow-lg transition"
+            onClick={openModal}>
+            <span className="material-icons-outlined mr-2"></span>
+            Upload File
+          </button>
         </div>
 
-        {/* Bagian Penjelasan */}
-        <div className="w-3/4 p-4">
-          {" "}
-          {/* Mengurangi padding untuk tampilan lebih compact */}
-          <h2 className="text-lg font-semibold text-gray-800 mb-2">
-            {" "}
-            {/* Mengurangi ukuran font */}
-            Dewan Pengawas Syariah (DPS)
-          </h2>
-          <p className="text-sm text-gray-700">
-            {" "}
-            {/* Mengurangi ukuran font untuk teks penjelasan */}
-            Lembaga yang memiliki peran strategis dalam mengawasi dan menjamin
-            kepatuhan suatu lembaga keuangan terhadap prinsip-prinsip Syariah
-          </p>
+        {/* Modal pop-up */}
+        <AddDps
+          openModal={openModal}
+          closeModal={closeModal}
+          isModalOpen={isModalOpen}
+        />
+
+        {/* Filter Section */}
+        <div className="mb-6">
+          <FilterDps />
         </div>
-      </div>
 
-      {/* Tombol Upload File */}
-      <div className="flex justify-start mb-6 p-4">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
-          onClick={openModal}>
-          Upload File
-        </button>
-      </div>
-
-      {/* Modal pop-up */}
-      <AddDps
-        openModal={openModal}
-        closeModal={closeModal}
-        isModalOpen={isModalOpen}
-      />
-
-      {/* Area Filter */}
-      <div className="p-4">
-        <FilterDps />
-      </div>
-
-      {/* Tabel untuk menampilkan file yang berhasil diupload */}
-      <div className="bg-gray-50 p-4 rounded-lg shadow-md m-4">
-        <ListDps />
+        {/* Table Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <ListDps />
+        </div>
       </div>
     </div>
   );

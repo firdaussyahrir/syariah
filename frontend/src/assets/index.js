@@ -6,6 +6,7 @@ import descdps from './descdps.jpeg';
 import sisLogo from './logo/iconYellow.png';
 import logo from './logo/logo.png';
 import loginLogo from './logo/demo.png';
+import bghome from './bghome.jpg';
 
 
 export {
@@ -17,6 +18,7 @@ export {
     sisLogo,
     logo,
     loginLogo,
+    bghome,
 };
 
 

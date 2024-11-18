@@ -1,7 +1,6 @@
-// Lrsa.jsx
 import React, { useState } from "react";
-import FilterLrsa from "./components/FilterLrsa";
 import AddLrsa from "./components/AddLrsa";
+import FilterLrsa from "./components/FilterLrsa";
 import ListLrsa from "./components/ListLrsa";
 
 const Lrsa = () => {
@@ -9,38 +8,46 @@ const Lrsa = () => {
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
-  // bg-[#F6F4EB]
+
   return (
     <div className="">
-      {/* Judul Halaman */}
-      <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
-        <h1 className="text-3xl font-semibold">
+      {/* Header */}
+      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
+        <h1 className="text-4xl font-semibold text-center">
           Lembar Review Syariah Advisory (LRSA)
         </h1>
+        <p className="text-center mt-2 text-lg opacity-80">
+          Manajemen Penilaian Regulasi Berbasis Syariah
+        </p>
       </div>
 
-      {/* Tombol Upload File */}
-      <div className="flex justify-start mb-6">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
-          onClick={openModal}>
-          Upload File
-        </button>
-      </div>
+      <div className="container mx-auto px-4">
+        {/* Tombol Upload File */}
+        <div className="flex justify-start mb-8">
+          <button
+            className="fflex items-center bg-[#1cd05d] text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#4682a8] hover:shadow-lg transition"
+            onClick={openModal}>
+            <span className="material-icons-outlined mr-2"></span>
+            Upload File
+          </button>
+        </div>
 
-      {/* Modal pop-up */}
-      <AddLrsa
-        openModal={openModal}
-        closeModal={closeModal}
-        isModalOpen={isModalOpen}
-      />
+        {/* Modal pop-up */}
+        <AddLrsa
+          openModal={openModal}
+          closeModal={closeModal}
+          isModalOpen={isModalOpen}
+        />
 
-      {/* Area Filter */}
-      <FilterLrsa />
+        {/* Filter Section */}
+        <div className="mb-6">
+          <FilterLrsa />
+        </div>
 
-      {/* Tabel untuk menampilkan file yang berhasil diupload */}
-      <div className="bg-gray-50 p-4 overflow-x-auto rounded-lg shadow-md">
-        <ListLrsa />
+        {/* Table Section */}
+        <div className="bg-white shadow-lg rounded-lg p-2 overflow-x-auto">
+          <ListLrsa />
+        </div>
       </div>
     </div>
   );

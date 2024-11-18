@@ -1,5 +1,5 @@
 import React from "react";
-import { imgLogin, loginLogo } from "../assets";
+import { imgLogin, loginLogo } from "../../assets";
 
 const Login = () => {
   return (

@@ -46,6 +46,13 @@ const SecNav = () => {
                 RISET
               </Link>
             </li>
+            <li>
+              <Link
+                to="/buletin"
+                className="text-gray-600 hover:text-blue-600 transition duration-300">
+                BULETIN
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

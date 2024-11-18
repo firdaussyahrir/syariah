@@ -11,8 +11,9 @@ import Profile from "./pages/profile/Profile";
 import Home from "./pages/home/Home";
 import About from "./pages/home/About";
 import Contact from "./pages/home/Contact";
-import Login from "./user/Login";
-import Riset from "./riset/Riset";
+import Login from "./pages/user/Login";
+import Riset from "./pages/riset/Riset";
+import Buletin from "./pages/buletin/Buletin";
 import useScrollTop from "./hooks/useScrollTop";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/riset" element={<Riset />} />
+            <Route path="/buletin" element={<Buletin />} />
           </Routes>
         </div>
       </div>

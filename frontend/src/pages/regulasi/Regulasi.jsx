@@ -1,7 +1,6 @@
-// Regulasi.jsx
 import React, { useState } from "react";
-import FilterRegulasi from "./components/FilterRegulasi";
 import AddRegulasi from "./components/AddRegulasi";
+import FilterRegulasi from "./components/FilterRegulasi";
 import ListRegulasi from "./components/ListRegulasi";
 
 const Regulasi = () => {
@@ -12,33 +11,41 @@ const Regulasi = () => {
 
   return (
     <div className="">
-      {/* Judul Halaman */}
-      <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
-        <h1 className="text-3xl font-semibold">Regulasi Syariah</h1>
+      {/* Header */}
+      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
+        <h1 className="text-4xl font-semibold text-center">Regulasi Syariah</h1>
+        <p className="text-center mt-2 text-lg opacity-80">
+          Kumpulan regulasi yang mengatur kegiatan keuangan syariah
+        </p>
       </div>
 
-      {/* Tombol Upload File */}
-      <div className="flex justify-start mb-6">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
-          onClick={openModal}>
-          Upload File
-        </button>
-      </div>
+      <div className="container mx-auto px-4">
+        {/* Tombol Upload File */}
+        <div className="flex justify-start mb-8">
+          <button
+            className="fflex items-center bg-[#1cd05d] text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#4682a8] hover:shadow-lg transition"
+            onClick={openModal}>
+            <span className="material-icons-outlined mr-2"></span>
+            Upload File
+          </button>
+        </div>
 
-      {/* Modal pop-up */}
-      <AddRegulasi
-        openModal={openModal}
-        closeModal={closeModal}
-        isModalOpen={isModalOpen}
-      />
+        {/* Modal pop-up */}
+        <AddRegulasi
+          openModal={openModal}
+          closeModal={closeModal}
+          isModalOpen={isModalOpen}
+        />
 
-      {/* Area Filter */}
-      <FilterRegulasi />
+        {/* Filter Section */}
+        <div className="mb-6">
+          <FilterRegulasi />
+        </div>
 
-      {/* Tabel untuk menampilkan file yang berhasil diupload */}
-      <div className="bg-gray-50 p-4 rounded-lg shadow-md">
-        <ListRegulasi />
+        {/* Table Section */}
+        <div className="bg-white shadow-lg rounded-lg p-2 overflow-x-auto">
+          <ListRegulasi />
+        </div>
       </div>
     </div>
   );
