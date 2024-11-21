@@ -1,149 +1,136 @@
-// src/components/AddDps.jsx
 import React from "react";
 
 const AddDps = ({ isModalOpen, closeModal }) => {
   return (
     isModalOpen && (
-      <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white w-full max-w-4xl p-6 rounded-lg shadow-lg relative">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="bg-white w-full max-w-4xl p-8 rounded-2xl shadow-xl relative">
+          <h2 className="text-2xl font-semibold mb-6 text-[#4682A9] text-center">
             Upload File DPS
           </h2>
           <form>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* No */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   No
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Opini/Risalah Rapat */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Opini/Risalah Rapat
                 </label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent">
+                <select className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300">
                   <option value="">Opini</option>
                   <option value="1">Risalah</option>
                 </select>
               </div>
 
-              {/* Date (Tahun) */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Date (Tahun)
                 </label>
                 <input
                   type="date"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* No Opini/Risalah Rapat */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   No Opini/Risalah Rapat
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Tanggal Masehi */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Tanggal Masehi
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Agenda/Perihal */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Agenda/Perihal
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Judul Opini */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Judul Opini
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Kelompok */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Kelompok
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Kategori */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Kategori
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Sub Kategori */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Sub Kategori
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
 
-              {/* Upload File */}
               <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-[#4682A9]">
                   Upload File
                 </label>
                 <input
                   type="file"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent"
+                  className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
                 />
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex justify-end mt-6 space-x-4">
               <button
                 type="button"
-                className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition"
+                className="w-full py-3 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-300"
                 onClick={closeModal}>
                 Cancel
               </button>
               <button
                 type="submit"
-                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition shadow-md">
+                className="w-full py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300">
                 Submit
               </button>
             </div>

@@ -1,13 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import FilterRiset from "./components/FilterRiset";
+import AddRiset from "./components/AddRiset";
+import ListRiset from "./components/ListRiset";
 
-function Riset() {
+const Riset = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
-    <div className="overflow-x-auto p-6 bg-[#F6F4EB] min-h-screen">
-      <div className="w-full bg-[#1736F5] text-white py-8 mb-8 flex justify-center items-center shadow-md">
-        <h1 className="text-3xl font-semibold">Riset Syariah</h1>
+    <div className="">
+      {/* Header */}
+      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
+        <h1 className="text-4xl font-semibold text-center">Riset Syariah</h1>
+        <p className="text-center mt-2 text-lg opacity-80">
+          Manajemen Data Opini dan Risalah Rapat
+        </p>
+      </div>
+
+      <div className="container mx-auto px-4">
+        {/* Tombol Upload File */}
+        <div className="flex justify-start mb-8">
+          <button
+            className="fflex items-center bg-[#1cd05d] text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#4682a8] hover:shadow-lg transition"
+            onClick={openModal}>
+            <span className="material-icons-outlined mr-2"></span>
+            Upload File
+          </button>
+        </div>
+
+        {/* Modal pop-up */}
+        <AddRiset
+          openModal={openModal}
+          closeModal={closeModal}
+          isModalOpen={isModalOpen}
+        />
+
+        {/* Filter Section */}
+        <div className="mb-6">
+          <FilterRiset />
+        </div>
+
+        {/* Table Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <ListRiset />
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Riset;

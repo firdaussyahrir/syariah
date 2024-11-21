@@ -10,24 +10,24 @@ const Dps = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className="">
+    <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
-      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
-        <h1 className="text-4xl font-semibold text-center">
-          Dewan Pengawas Syariah (DPS)
-        </h1>
-        <p className="text-center mt-2 text-lg opacity-80">
-          Manajemen Data Opini dan Risalah Rapat
-        </p>
-      </div>
+      <header className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-6 shadow-md">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl font-bold">Dewan Pengawas Syariah (DPS)</h1>
+          <p className="text-sm opacity-80 mt-2">
+            Manajemen Data Opini dan Risalah Rapat
+          </p>
+        </div>
+      </header>
 
-      <div className="container mx-auto px-4">
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
         {/* Tombol Upload File */}
-        <div className="flex justify-start mb-8">
+        <div className="flex justify-end mb-6">
           <button
-            className="fflex items-center bg-[#1cd05d] text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#4682a8] hover:shadow-lg transition"
+            className="py-3 px-6 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 transition duration-300"
             onClick={openModal}>
-            <span className="material-icons-outlined mr-2"></span>
             Upload File
           </button>
         </div>
@@ -40,15 +40,25 @@ const Dps = () => {
         />
 
         {/* Filter Section */}
-        <div className="mb-6">
+        <section className="mb-6">
           <FilterDps />
-        </div>
+        </section>
 
         {/* Table Section */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
+        <section>
           <ListDps />
-        </div>
-      </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="text-center py-4 bg-gray-100 text-sm text-gray-600">
+        Memerlukan bantuan?{" "}
+        <a
+          href="#"
+          className="text-blue-500 hover:text-blue-700 underline transition duration-300">
+          Hubungi Support
+        </a>
+      </footer>
     </div>
   );
 };

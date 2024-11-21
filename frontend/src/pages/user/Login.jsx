@@ -4,55 +4,63 @@ import { imgLogin, loginLogo } from "../../assets";
 const Login = () => {
   return (
     <div
-      className="flex min-h-screen items-center justify-center bg-cover bg-center"
+      className="relative flex min-h-screen items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${imgLogin})` }}>
-      {/* Overlay jika ingin menambah efek gelap di gambar */}
+      {/* Overlay efek blur */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-md"></div>
 
-      {/* Bagian Kiri - Form Login */}
-      <div className="relative w-full max-w-sm bg-white p-8 rounded-xl shadow-lg z-20">
+      {/* Konten Login */}
+      <div className="relative z-20 w-full max-w-md bg-white bg-opacity-90 p-8 rounded-2xl shadow-2xl">
         {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <img src={loginLogo} alt="CIMB Niaga Syariah" className="w-32" />
+        <div className="flex justify-center mb-8">
+          <img
+            src={loginLogo}
+            alt="CIMB Niaga Syariah"
+            className="w-28 drop-shadow-lg"
+          />
         </div>
 
-        {/* Instruksi */}
-        <h2 className="text-gray-800 mb-6 text-center text-xl font-semibold">
-          Masukkan email dan password untuk melanjutkan
+        {/* Judul */}
+        <h2 className="text-gray-800 mb-6 text-center text-2xl font-bold tracking-wide">
+          Selamat Datang
         </h2>
+        <p className="text-gray-600 text-center mb-6 text-sm">
+          Silakan login untuk mengakses dashboard Anda.
+        </p>
 
         {/* Form Login */}
-        <form className="space-y-5">
+        <form className="space-y-6">
           {/* Input Email */}
-          <div className="flex items-center border border-gray-300 rounded-md p-3">
+          <div className="relative">
             <input
               type="email"
               placeholder="Masukkan alamat email"
-              className="flex-1 outline-none bg-transparent text-gray-800"
+              className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
           </div>
 
           {/* Input Password */}
-          <div className="flex items-center border border-gray-300 rounded-md p-3">
+          <div className="relative">
             <input
               type="password"
               placeholder="Masukkan password"
-              className="flex-1 outline-none bg-transparent text-gray-800"
+              className="w-full p-4 bg-gray-50 rounded-lg shadow-sm outline-none text-gray-800 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
           </div>
 
           {/* Tombol Masuk */}
           <button
-            disabled={false} // Ganti nilai ke true jika validasi form belum selesai
             type="submit"
-            className="w-full bg-[#1736F5] text-white py-3 rounded-md font-semibold hover:bg-[#0f2b9e] transition duration-300">
+            disabled={false} // Ganti true jika validasi form belum selesai
+            className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-blue-800 transition duration-300">
             Masuk
           </button>
         </form>
 
-        {/* Bantuan */}
-        <p className="text-gray-500 mt-5 text-center">
+        {/* Teks Bantuan */}
+        <p className="text-gray-600 mt-6 text-center">
           Lupa email atau password?{" "}
-          <a href="#" className="text-[#FFC70B] hover:underline">
+          <a href="#" className="text-blue-500 hover:text-blue-700 underline">
             Bantuan
           </a>
         </p>
