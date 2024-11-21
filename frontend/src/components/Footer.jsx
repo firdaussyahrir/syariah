@@ -5,7 +5,7 @@ import { sisLogo } from "../assets";
 
 function Footer() {
   return (
-    <footer className="bg-[#1736F5] text-white py-6">
+    <footer className="bg-[#E7F0F9] text-gray-700 py-6">
       <div className="container mx-auto px-4 text-center">
         {/* Logo Section */}
         <div className="mb-4">
@@ -17,14 +17,18 @@ function Footer() {
         </div>
 
         {/* Watermark Section */}
-        <div className="text-xs">
+        <div className="text-sm">
           <p>© {new Date().getFullYear()} MSIB Batch 7 @ CIMB Niaga</p>
           <p>
-            <Link to="/privacy" className="hover:text-[#F6F4EB]">
+            <Link
+              to="/privacy"
+              className="hover:text-blue-600 transition duration-200">
               Privacy Policy
             </Link>{" "}
             |{" "}
-            <Link to="/contact" className="hover:text-[#F6F4EB]">
+            <Link
+              to="/contact"
+              className="hover:text-blue-600 transition duration-200">
               Contact Us
             </Link>
           </p>

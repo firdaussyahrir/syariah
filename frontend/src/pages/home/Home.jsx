@@ -8,80 +8,89 @@ import {
   FaNewspaper,
 } from "react-icons/fa"; // Icons
 import Hadith from "./Hadith";
-import { bghome } from "../../assets"; // Impor gambar background
 
 function Home() {
   return (
     <div
-      className="relative flex flex-col items-center justify-center p-6 text-[#2D3748]"
+      className="flex flex-col items-center justify-start p-8"
       style={{
-        backgroundImage: `url(${bghome})`, // Background gambar
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundColor: "white", // Warna dasar lebih lembut
       }}>
-      {/* Overlay efek gelap */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md z-0"></div>
-
-      {/* Header */}
-      <header className="relative text-center mb-16 max-w-4xl w-full z-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white tracking-wider drop-shadow-lg">
-          Selamat Datang di Syariah Information System
+      {/* Judul */}
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-extrabold text-[#2D3748] tracking-wide mb-6">
+          Syariah Information System
         </h1>
-        <div className="relative z-10">
+        <div className="bg-[#91C8E4] py-4 px-6 rounded-lg shadow-md">
           <Hadith />
         </div>
       </header>
 
-      {/* Fitur Utama */}
-      <main className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl z-10">
+      {/* Link Utama */}
+      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
         {[
           {
             title: "Dewan Pengawas Syariah (DPS)",
-            description:
-              "Mengawasi kepatuhan lembaga terhadap prinsip Syariah.",
-            icon: <FaBalanceScale className="text-5xl text-white" />,
+            description: "Mengawasi prinsip Syariah.",
+            icon: <FaBalanceScale />,
             to: "/dps",
+            color: "#FFB400",
           },
           {
             title: "Lembar Review Syariah Advisory (LRSA)",
-            description: "Pusat penilaian regulasi berbasis Syariah.",
-            icon: <FaBook className="text-5xl text-white" />,
+            description: "Pusat evaluasi Syariah.",
+            icon: <FaBook />,
             to: "/lrsa",
+            color: "#4682A9",
           },
           {
             title: "Regulasi Syariah",
-            description:
-              "Kumpulan regulasi yang mengatur kegiatan keuangan Syariah.",
-            icon: <FaGavel className="text-5xl text-white" />,
+            description: "Kumpulan regulasi Syariah.",
+            icon: <FaGavel />,
             to: "/regulasi",
+            color: "#82C09A",
           },
           {
             title: "Riset Syariah",
-            description:
-              "Penelitian dan pengembangan untuk mendukung penerapan Syariah.",
-            icon: <FaSearch className="text-5xl text-white" />,
+            description: "Penelitian mendalam Syariah.",
+            icon: <FaSearch />,
             to: "/riset",
+            color: "#E86850",
           },
           {
             title: "Buletin Syariah",
-            description:
-              "Berita terbaru dan informasi terkini terkait Syariah.",
-            icon: <FaNewspaper className="text-5xl text-white" />,
+            description: "Berita terbaru Syariah.",
+            icon: <FaNewspaper />,
             to: "/buletin",
+            color: "#749BC2",
           },
         ].map((feature, index) => (
           <Link
             key={index}
             to={feature.to}
-            className="p-8 rounded-xl bg-gradient-to-r from-[#91C8E4] to-[#4682A9] shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 flex flex-col items-center text-center group z-10">
-            <div className="p-4 rounded-full bg-[#2D3748] group-hover:scale-110 transform transition-transform duration-300 mb-4">
+            className="p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 bg-white group relative overflow-hidden">
+            {/* Background Accent */}
+            <div
+              className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+              style={{
+                backgroundColor: feature.color,
+                clipPath: "circle(70% at 50% 50%)",
+              }}></div>
+
+            {/* Icon */}
+            <div
+              className="text-6xl mb-4"
+              style={{
+                color: feature.color,
+              }}>
               {feature.icon}
             </div>
-            <h3 className="text-lg font-bold text-white group-hover:text-[#F6F4EB] transition-colors duration-300">
+
+            {/* Text */}
+            <h3 className="text-xl font-bold text-[#2D3748]">
               {feature.title}
             </h3>
-            <p className="text-sm text-[#F6F4EB] mt-2">{feature.description}</p>
+            <p className="text-sm text-[#4A5568] mt-2">{feature.description}</p>
           </Link>
         ))}
       </main>

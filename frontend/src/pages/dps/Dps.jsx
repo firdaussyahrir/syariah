@@ -10,9 +10,9 @@ const Dps = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="flex flex-col bg-white">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-6 shadow-md">
+      <header className="bg-gradient-to-r from-blue-100 to-blue-300 text-[#374151] py-6 shadow-md">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold">Dewan Pengawas Syariah (DPS)</h1>
           <p className="text-sm opacity-80 mt-2">
@@ -49,16 +49,6 @@ const Dps = () => {
           <ListDps />
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="text-center py-4 bg-gray-100 text-sm text-gray-600">
-        Memerlukan bantuan?{" "}
-        <a
-          href="#"
-          className="text-blue-500 hover:text-blue-700 underline transition duration-300">
-          Hubungi Support
-        </a>
-      </footer>
     </div>
   );
 };

@@ -20,8 +20,8 @@ function Hadith() {
 
   return (
     <div className="text-center">
-      <p className="text-lg italic text-white max-w-2xl mx-auto">
-        “{currentHadith}”
+      <p className="text-lg italic text-[#2D3748] max-w-2xl mx-auto">
+        {currentHadith}
       </p>
     </div>
   );

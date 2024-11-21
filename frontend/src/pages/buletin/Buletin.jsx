@@ -12,12 +12,14 @@ const Buletin = () => {
   return (
     <div className="">
       {/* Header */}
-      <div className="bg-[#4682a8] text-white py-8 mb-10 shadow-lg">
-        <h1 className="text-4xl font-semibold text-center">Buletin Syariah</h1>
-        <p className="text-center mt-2 text-lg opacity-80">
-          Manajemen Data Opini dan Risalah Rapat
-        </p>
-      </div>
+      <header className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-6 shadow-md">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl font-bold">Buletin Syariah</h1>
+          <p className="text-sm opacity-80 mt-2">
+            Manajemen Data Opini dan Risalah Rapat
+          </p>
+        </div>
+      </header>
 
       <div className="container mx-auto px-4">
         {/* Tombol Upload File */}
