@@ -23,7 +23,7 @@ const Dps = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        {/* Tombol Upload File */}
+        {/* Button to open Upload File Modal */}
         <div className="flex justify-end mb-6">
           <button
             className="py-3 px-6 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 transition duration-300"
@@ -32,12 +32,8 @@ const Dps = () => {
           </button>
         </div>
 
-        {/* Modal pop-up */}
-        <AddDps
-          openModal={openModal}
-          closeModal={closeModal}
-          isModalOpen={isModalOpen}
-        />
+        {/* Modal Pop-up */}
+        <AddDps isModalOpen={isModalOpen} closeModal={closeModal} />
 
         {/* Filter Section */}
         <section className="mb-6">

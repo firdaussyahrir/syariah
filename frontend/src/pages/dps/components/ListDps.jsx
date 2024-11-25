@@ -1,53 +1,57 @@
-// src/components/ListDps.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FaPen, FaTrash, FaEye, FaDownload } from "react-icons/fa"; // Ikon dari Font Awesome
+import axios from "axios"; // Import axios
 
 const ListDps = () => {
+  // Inisialisasi state untuk data DPS
+  const [dpsData, setDpsData] = useState([]);
+
+  // Mengambil data DPS saat komponen dimount
+  useEffect(() => {
+    axios
+      .get("http://localhost:5001/dps")
+      .then((response) => {
+        // Pastikan response.data adalah array
+        if (Array.isArray(response.data)) {
+          setDpsData(response.data);
+        } else {
+          console.error("Data yang diterima bukan array:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching DPS data:", error);
+      });
+  }, []); // Empty dependency array berarti hanya akan dipanggil sekali saat komponen dimount
+
   return (
-    <table className="table-auto w-full border border-gray-200 text-sm text-left text-gray-800">
-      <thead className="bg-blue-50 text-blue-700">
-        <tr>
-          <th className="p-3 border-b">No</th>
-          <th className="p-3 border-b">Opini/Risalah Rapat</th>
-          <th className="p-3 border-b">Date</th>
-          <th className="p-3 border-b">No Opini/Risalah Rapat</th>
-          <th className="p-3 border-b">Tanggal Masehi</th>
-          <th className="p-3 border-b">Agenda/Perihal</th>
-          <th className="p-3 border-b">Judul Opini</th>
-          <th className="p-3 border-b">Kelompok</th>
-          <th className="p-3 border-b">Kategori</th>
-          <th className="p-3 border-b">Sub Kategori</th>
-          <th className="p-3 border-b">Actions</th>{" "}
-          {/* Kolom untuk tombol aksi */}
-        </tr>
-      </thead>
-      <tbody>
-        <tr className="border-b">
-          <td className="p-3">1</td>
-          <td className="p-3">Contoh Opini</td>
-          <td className="p-3">2024</td>
-          <td className="p-3">0001</td>
-          <td className="p-3">01-01-2024</td>
-          <td className="p-3">Perihal Contoh</td>
-          <td className="p-3">Judul Contoh</td>
-          <td className="p-3">Kelompok A</td>
-          <td className="p-3">Kategori X</td>
-          <td className="p-3">Sub Kategori Y</td>
-          <td className="p-3 text-center">
-            {/* Tombol untuk Read, Edit, Delete */}
-            <button className="bg-green-500 text-white px-3 py-1 rounded mr-2 hover:bg-green-600 transition">
-              Read
-            </button>
-            <button className="bg-yellow-500 text-white px-3 py-1 rounded mr-2 hover:bg-yellow-600 transition">
-              Edit
-            </button>
-            <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
-              Delete
-            </button>
-          </td>
-        </tr>
-        {/* Tambahkan lebih banyak baris sesuai kebutuhan */}
-      </tbody>
-    </table>
+    <div>
+      <h1>List DPS</h1>
+      {/* Cek apakah dpsData adalah array sebelum memetakan */}
+      {Array.isArray(dpsData) && dpsData.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Opini/Risalah Rapat</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dpsData.map((dps, index) => (
+              <tr key={dps.id}>
+                <td>{index + 1}</td>
+                <td>{dps.opiniRapat}</td>
+                <td>
+                  <FaEye /> <FaPen /> <FaTrash /> <FaDownload />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>Data DPS tidak ditemukan atau masih kosong.</p>
+      )}
+    </div>
   );
 };
 
